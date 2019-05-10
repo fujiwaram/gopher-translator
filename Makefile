@@ -9,7 +9,7 @@ restart: stop start
 start:
 	docker run \
 		--name $(NAME) \
-		-v $(CURDIR)\:/go/src/github.com/fujiwaram/gopherTranslator \
+		-v $(CURDIR)\:/go/src/github.com/fujiwaram/gopher-translator \
 		-itd $(NAME):$(VERSION)
 
 contener=`docker ps -a -q`

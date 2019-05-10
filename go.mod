@@ -1,3 +1,3 @@
-module github.com/fujiwaram/gopherTranslator
+module github.com/fujiwaram/gopher-translator
 
 go 1.12

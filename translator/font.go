@@ -1,8 +1,8 @@
 package translator
 
 import (
-	"github.com/fujiwaram/gopherTranslator/consts"
-	"github.com/fujiwaram/gopherTranslator/translator/lib"
+	"github.com/fujiwaram/gopher-translator/consts"
+	"github.com/fujiwaram/gopher-translator/translator/lib"
 )
 
 type fontOutline []actionPoint

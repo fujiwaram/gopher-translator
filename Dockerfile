@@ -2,7 +2,7 @@ FROM golang:1.12-alpine3.9
 
 MAINTAINER fujiwaram
 
-ENV APP github.com/fujiwaram/gopherTranslator
+ENV APP github.com/fujiwaram/gopher-translator
 ENV APP_ROOT $GOPATH/src/$APP
 
 ADD . $APP_ROOT

@@ -1,6 +1,6 @@
 package translator
 
-import "github.com/fujiwaram/gopherTranslator/translator/lib"
+import "github.com/fujiwaram/gopher-translator/translator/lib"
 
 type points []point
 

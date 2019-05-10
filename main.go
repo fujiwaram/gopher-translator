@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/fujiwaram/gopherTranslator/translator"
+	"github.com/fujiwaram/gopher-translator/translator"
 )
 
 func main() {
