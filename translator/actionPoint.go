@@ -26,10 +26,6 @@ func (ap actionPoint) adjust(margin point) actionPoint {
 	return actionPoint{action: ap.action, points: newPoints}
 }
 
-func (ap actionPoint) getMaxX() float64 {
-	return ap.points.getMaxX()
-}
-
 func (ap actionPoint) getMaxXY() point {
 	return ap.points.getMaxXY()
 }
@@ -70,11 +66,11 @@ type curveToHandler struct{}
 // translate
 //
 
-func (ap actionPoint) translate(prevAngle lib.Angle, prevAp actionPoint) *lib.Order {
+func (ap actionPoint) translate(prevAngle lib.Angle, prevAp actionPoint) (*lib.Order, error) {
 	translatedAction := ap.action.translate(prevAp.action)
 	translatedPoints := pointsHandler[ap.action].translate(prevAngle, prevAp.getEndPoint(), ap.points)
-	translatedAction.Append(*translatedPoints)
-	return &translatedAction
+	err := translatedAction.Append(*translatedPoints)
+	return &translatedAction, err
 }
 
 func lineTranslate(o *lib.Order, prevAngle lib.Angle, prevPoint, nextPoint point) {

@@ -22,11 +22,6 @@ func (ps points) adjust(margin point) points {
 	return newPoints
 }
 
-func (ps points) getMaxX() float64 {
-	p := ps.getMaxXY()
-	return p.X
-}
-
 func (ps points) getMaxXY() point {
 	if len(ps) == 0 {
 		return point{}

@@ -11,8 +11,9 @@ type Order struct {
 }
 
 // Append .
-func (o *Order) Append(addO Order) {
-	addO.b.WriteTo(&o.b)
+func (o *Order) Append(addO Order) error {
+	_, err := addO.b.WriteTo(&o.b)
+	return err
 }
 
 // WriteString .

@@ -31,10 +31,7 @@ func parseAction(data interface{}) action {
 }
 
 func (a action) isChunkTail() bool {
-	if a == closePath {
-		return true
-	}
-	return false
+	return a == closePath
 }
 
 func (a action) isOnePoint() bool {

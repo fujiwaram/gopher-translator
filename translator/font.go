@@ -136,18 +136,24 @@ func (outline fontOutline) endAngle() lib.Angle {
 	return src.angle(dst)
 }
 
-func (outline fontOutline) translate(prevFont fontOutline) *lib.Order {
+func (outline fontOutline) translate(prevFont fontOutline) (*lib.Order, error) {
 	var o lib.Order
 
 	currentAngle := prevFont.endAngle()
 	currentActionPoint := prevFont.endActionPoint()
 	for _, actionPoint := range outline {
-		subO := actionPoint.translate(currentAngle, currentActionPoint)
-		o.Append(*subO)
+		subO, err := actionPoint.translate(currentAngle, currentActionPoint)
+		if err != nil {
+			return nil, err
+		}
+		err = o.Append(*subO)
+		if err != nil {
+			return nil, err
+		}
 
 		currentAngle = actionPoint.getEndAngle(currentActionPoint.getEndPoint())
 		currentActionPoint = actionPoint
 	}
 
-	return &o
+	return &o, nil
 }

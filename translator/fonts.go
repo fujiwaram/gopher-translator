@@ -34,7 +34,7 @@ func ParseFontOutlines(data interface{}) FontOutlines {
 }
 
 // Translate .
-func (fonts FontOutlines) Translate(message string) string {
+func (fonts FontOutlines) Translate(message string) (string, error) {
 	var o lib.Order
 
 	o.WriteString("draw mode\n")
@@ -42,20 +42,32 @@ func (fonts FontOutlines) Translate(message string) string {
 	prevFont := makeDummyFirstFont(fonts.getFirstPoint())
 	// string
 	for _, f := range fonts {
-		subO := f.translate(prevFont)
-		o.Append(*subO)
+		subO, err := f.translate(prevFont)
+		if err != nil {
+			return "", err
+		}
+		if err := o.Append(*subO); err != nil {
+			return "", err
+		}
 		prevFont = f
 	}
 	// last
 	f := makeDummyLastFont(fonts.getEndPoint())
-	subO := f.translate(prevFont)
-	o.Append(*subO)
+	subO, err := f.translate(prevFont)
+	if err != nil {
+		return "", err
+	}
+	if err := o.Append(*subO); err != nil {
+		return "", err
+	}
 
 	// message
 	msgO := newMessage(message).translate()
-	o.Append(*msgO)
+	if err := o.Append(*msgO); err != nil {
+		return "", err
+	}
 
-	return o.String()
+	return o.String(), nil
 }
 
 func (fonts FontOutlines) getMaxXY() point {

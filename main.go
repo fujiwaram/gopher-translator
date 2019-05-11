@@ -19,7 +19,7 @@ func main() {
 		log.Println(err)
 		return
 	}
-	fmt.Printf(order)
+	fmt.Println(order)
 }
 
 func translate(str, message string) (string, error) {
@@ -27,7 +27,7 @@ func translate(str, message string) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return outlines.Translate(message), nil
+	return outlines.Translate(message)
 }
 
 func parseParam(str string) (translator.FontOutlines, error) {
