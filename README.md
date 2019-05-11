@@ -26,10 +26,10 @@ $ make up
 
 ### translate order
 ```
-$ translate.sh TEXT
+$ ./translate.sh TEXT
 
 e.g. 
-$ translate.sh ABC
+$ ./translate.sh ABC
 ```
 
 Order for gopher is created as file in ./output directory.
