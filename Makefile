@@ -1,6 +1,25 @@
 NAME=gopher-translator
 VERSION=0.1.0
 
+# for docker-compose
+
+build-all:
+	docker-compose build
+
+up:
+	docker-compose up -d
+
+down:
+	docker-compose down
+
+ps:
+	docker-compose ps
+
+sh:
+	docker-compose exec $(NAME) sh
+
+# for docker
+
 build:
 	docker build -t $(NAME):$(VERSION) .
 

@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  gopher-translator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/go/src/github.com/fujiwaram/gopher-translator
+    tty: true
+  font-outline-tools:
+    image: fujiwaram/font-outline-tools
+    tty: true

@@ -8,4 +8,4 @@ ENV APP_ROOT $GOPATH/src/$APP
 ADD . $APP_ROOT
 WORKDIR $APP_ROOT
 
-RUN go build $APP
+RUN go install $APP
