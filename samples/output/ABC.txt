@@ -181,3 +181,10 @@ right 311.000000
 forward 1.800000
 right 0.000000
 forward 0.000000
+color off
+right 359.000000
+forward 4.182021
+color off
+right 91.000000
+forward 0.001000
+say ABC

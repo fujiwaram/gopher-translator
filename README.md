@@ -36,12 +36,12 @@ Order for gopher is created as file in ./output directory.
 ```
 draw mode
 color off
-right 335.000000
-forward 6.885225
+right 303.000000
+forward 7.883660
 color black
-right 115.000000
-forward 7.360000
-right 90.000000
+right 76.000000
+forward 0.898109
+right 359.000000
 ...
 ```
 
