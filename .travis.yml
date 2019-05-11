@@ -19,7 +19,7 @@ before_script:
 
 script:
   - golangci-lint run
-  - go test -v -race -cover ./...
+  - go test -v -race -cover -coverprofile=coverage.txt ./...
 
 after_success:
-  - codecov
+  - bash <(curl -s https://codecov.io/bash)
