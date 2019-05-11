@@ -1,5 +1,6 @@
 # Gopher Translator
 [![Build Status](https://travis-ci.org/fujiwaram/gopher-translator.svg?branch=master)](https://travis-ci.org/golang/lint)
+[![codecov](https://codecov.io/gh/fujiwaram/gopher-translator/branch/master/graph/badge.svg)](https://codecov.io/gh/fujiwaram/gopher-translator)
 
 gopher translator for [goplay.space](https://goplay.space/)
 
